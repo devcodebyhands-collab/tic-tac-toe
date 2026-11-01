@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tic-Tac-Toe — X vs O</title>
+    <meta
+      name="description"
+      content="A polished two-player tic-tac-toe game you can play in the browser."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="hero">
+        <p class="eyebrow">Local two-player</p>
+        <h1 class="title">Tic<span class="title__dash">·</span>Tac<span class="title__dash">·</span>Toe</h1>
+        <p class="tagline">Line up three. Take the round. Keep the score.</p>
+      </header>
+
+      <main class="game">
+        <h2 class="sr-only">Game</h2>
+
+        <section class="scoreboard" aria-label="Running score">
+          <div class="score score--x">
+            <span class="score__label"><span class="score__glyph">X</span> Player X</span>
+            <span class="score__value" id="score-x">0</span>
+            <span class="score__caption">wins</span>
+          </div>
+          <div class="score score--draw">
+            <span class="score__label"><span class="score__glyph">=</span> Draws</span>
+            <span class="score__value" id="score-draws">0</span>
+            <span class="score__caption">tied</span>
+          </div>
+          <div class="score score--o">
+            <span class="score__label"><span class="score__glyph">O</span> Player O</span>
+            <span class="score__value" id="score-o">0</span>
+            <span class="score__caption">wins</span>
+          </div>
+        </section>
+
+        <p class="status" id="status" role="status" aria-live="polite">
+          <span class="status__mark status__mark--x" id="status-mark" aria-hidden="true">X</span>
+          <span id="status-text">Player X's turn</span>
+        </p>
+
+        <div class="board" id="board" role="group" aria-label="Tic-tac-toe board">
+          <button class="cell" type="button" data-index="0" aria-label="Row 1, column 1, empty"></button>
+          <button class="cell" type="button" data-index="1" aria-label="Row 1, column 2, empty"></button>
+          <button class="cell" type="button" data-index="2" aria-label="Row 1, column 3, empty"></button>
+          <button class="cell" type="button" data-index="3" aria-label="Row 2, column 1, empty"></button>
+          <button class="cell" type="button" data-index="4" aria-label="Row 2, column 2, empty"></button>
+          <button class="cell" type="button" data-index="5" aria-label="Row 2, column 3, empty"></button>
+          <button class="cell" type="button" data-index="6" aria-label="Row 3, column 1, empty"></button>
+          <button class="cell" type="button" data-index="7" aria-label="Row 3, column 2, empty"></button>
+          <button class="cell" type="button" data-index="8" aria-label="Row 3, column 3, empty"></button>
+        </div>
+
+        <div class="actions">
+          <button class="button button--primary" type="button" id="new-round">New round</button>
+          <button class="button button--ghost" type="button" id="reset-score">Reset score</button>
+        </div>
+
+        <p class="hint">
+          Click a square — or use <kbd>Tab</kbd> / arrow keys and <kbd>Enter</kbd> to play.
+        </p>
+      </main>
+
+      <footer class="footer">
+        <p>X always goes first. A new round starts after every win or draw.</p>
+      </footer>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
